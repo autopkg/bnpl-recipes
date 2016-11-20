@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://www.freefilesync.org/download.php</string>
                 <key>re_pattern</key>
-                <string>href="download/(.*FreeFileSync_.*_Mac_OS_X\.zip)</string>
+                <string>href=".*download/(.*FreeFileSync_.*_macOS\.zip)"</string>
                 <key>result_output_var_name</key>
                 <string>match</string>
                 <key>request_headers</key>
