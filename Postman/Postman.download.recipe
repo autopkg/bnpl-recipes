@@ -21,9 +21,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://www.getpostman.com/app/postman-osx</string>
+                <string>https://www.getpostman.com/app/download/osx64</string>
                 <key>re_pattern</key>
-                <string>&lt;a href="(.*)"&gt;Manually initiate download&lt;/a&gt;</string>
+                <string>&lt;a href="(.*)" id="manual_dl"&gt;Manually initiate download&lt;/a&gt;</string>
                 <key>result_output_var_name</key>
                 <string>match</string>
                 <key>request_headers</key>
