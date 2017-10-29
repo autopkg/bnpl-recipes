@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of Oracle Java SE DK 9.</string>
+    <key>Identifier</key>
+    <string>com.github.bnpl.autopkg.download.oraclejavasedk9</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>OracleJavaSEDK9</string>
+        <key>USER_AGENT</key>
+        <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html</string>
+                <key>re_pattern</key>
+                <string>(?P&lt;url&gt;http://download.oracle.com/otn-pub/java/jdk/.*?/jdk-9.[.0-9]+_osx-x64_bin.dmg)</string>
+                <key>request_headers</key>
+                <dict>
+                    <key>user-agent</key>
+                    <string>%USER_AGENT%</string>
+                    <key>Cookie</key>
+                    <string>oraclelicense=accept-securebackup-cookie</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%match%</string>
+                <key>CHECK_FILESIZE_ONLY</key>
+                <true/>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+    </array>
+</dict>
+</plist>
