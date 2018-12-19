@@ -43,6 +43,17 @@
             </dict>
         </dict>
         <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pkgroot%/Applications/Postman.app</string>
+                <key>requirement</key>
+                <string>identifier "com.postmanlabs.mac" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = H7H8Q7M5CK</string>
+            </dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+        </dict>
+        <dict>
             <key>Processor</key>
             <string>PlistReader</string>
             <key>Arguments</key>
