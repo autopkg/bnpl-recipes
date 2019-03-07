@@ -10,6 +10,8 @@
     <dict>
         <key>NAME</key>
         <string>Postman</string>
+        <key>DOWNLOAD_URL</key>
+        <string>https://dl.pstmn.io/download/latest/osx</string>        
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -17,33 +19,20 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>URLTextSearcher</string>
+            <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://www.getpostman.com/app/download/osx64</string>
-                <key>re_pattern</key>
-                <string>&lt;a href="(.*)" id="manual_dl"&gt;Manually initiate download&lt;/a&gt;</string>
-                <key>result_output_var_name</key>
-                <string>match</string>
+                <string>%DOWNLOAD_URL%</string>
+                <key>filename</key>
+                <string>Postman.zip</string>
+                <key>CHECK_FILESIZE_ONLY</key>
+                <true/>
                 <key>request_headers</key>
                 <dict>
                     <key>user-agent</key>
                     <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
                 </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%match%</string>
-                <key>filename</key>
-                <string>Postman.zip</string>
-                <key>CHECK_FILESIZE_ONLY</key>
-                <true/>
             </dict>
         </dict>
         <dict>
