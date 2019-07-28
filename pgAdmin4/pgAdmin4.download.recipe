@@ -23,7 +23,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://www.pgadmin.org/download/macos4.php</string>
+                <string>https://www.pgadmin.org/download/pgadmin-4-macos/</string>
                 <key>re_pattern</key>
                 <string>href="(https://.*?/macos/)"&gt;pg</string>
                 <key>request_headers</key>
