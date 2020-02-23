@@ -1,0 +1,28 @@
+#!/usr/bin/expect
+
+set jarpath [lindex $argv 0]
+set apppath [lindex $argv 1]
+
+spawn java -jar $jarpath -console
+
+expect -re "press 1.*"
+send "1\r"
+
+expect -re "Select target path.*"
+send "$apppath\r"
+
+set timeout 3
+
+while 1 {
+    expect {
+        -re "input 1.*" {
+            send "1\r"
+        }
+        -re "press 1.*" {
+            send "1\r"
+        }
+        eof {
+            break
+        }
+    }
+}
