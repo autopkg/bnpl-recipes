@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of WonderShare MobileTrans and imports it to Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.bnpl.autopkg.munki.wondersharemobiletrans</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>WonderShare MobileTrans</string>
+        <key>APP_DESTINATION</key>
+        <string>/Applications</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>category</key>
+            <string>Utilities</string>
+            <key>description</key>
+            <string>Transfer Data From iPhone, Android, iOS, iTunes, iCloud to Anywhere without Any Loss.</string>
+            <key>developer</key>
+            <string>WonderShare</string>
+            <key>display_name</key>
+            <string>WonderShare MobileTrans</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>unattended_uninstall</key>
+            <true/>
+            <key>uninstallable</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.4.3</string>
+    <key>ParentRecipe</key>
+    <string>com.github.bnpl.autopkg.download.wondersharemobiletrans</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+                <key>additional_makepkginfo_options</key>
+                <array>
+                    <string>--destinationpath</string>
+                    <string>%APP_DESTINATION%</string>
+                </array>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>
