@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of SQuirreL SQL Client.</string>
+    <key>Identifier</key>
+    <string>com.github.bnpl.autopkg.download.squirrelsql</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>SQuirreLSQL</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>1.0.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>http://squirrel-sql.sourceforge.net/#installation</string>
+                <key>re_pattern</key>
+                <string>href="(http://sourceforge.net/projects/squirrel-sql/.*-install.jar/download)"&gt;Install jar of SQuirreL .* for Mac.*</string>
+                <key>result_output_var_name</key>
+                <string>prematch</string>
+                <key>request_headers</key>
+                <dict>
+                    <key>user-agent</key>
+                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%prematch%</string>
+                <key>re_pattern</key>
+                <string>http-equiv="refresh" content=".*; url=(.*)"</string>
+                <key>result_output_var_name</key>
+                <string>match</string>
+                <key>request_headers</key>
+                <dict>
+                    <key>user-agent</key>
+                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%prematch%</string>
+                <key>re_pattern</key>
+                <string>http-equiv="refresh" content=".*; url=.*/(.*\.jar).*"</string>
+                <key>result_output_var_name</key>
+                <string>namematch</string>
+                <key>request_headers</key>
+                <dict>
+                    <key>user-agent</key>
+                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%match%</string>
+                <key>filename</key>
+                <string>%namematch%</string>
+                <key>CHECK_FILESIZE_ONLY</key>
+                <true/>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+    </array>
+</dict>
+</plist>
