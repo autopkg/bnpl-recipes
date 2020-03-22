@@ -21,7 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://www.wondershare.net/ad/mobiletrans/new.html</string>
+                <string>https://www.wondershare.net/mac-phone-transfer/reference.html</string>
                 <key>re_pattern</key>
                 <string>href="(http.*mobiletrans.*\.dmg)"</string>
                 <key>result_output_var_name</key>
