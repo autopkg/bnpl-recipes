@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://www.freefilesync.org/download.php</string>
                 <key>re_pattern</key>
-                <string>href=".*download/(.*FreeFileSync_.*_macOS\.zip)"</string>
+                <string>href=".*download/(.*FreeFileSync_.*_macOS)\.zip"</string>
                 <key>result_output_var_name</key>
                 <string>match</string>
                 <key>request_headers</key>
@@ -39,8 +39,17 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.freefilesync.org/download/%match%</string>
+                <string>http://www.freefilesync.org/download/%match%.zip</string>
                 <key>CHECK_FILESIZE_ONLY</key>
+                <true/>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Unarchiver</string>
+            <key>Arguments</key>
+            <dict>
+                <key>purge_destination</key>
                 <true/>
             </dict>
         </dict>
@@ -50,7 +59,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/FreeFileSync_10.10_macOS.pkg</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/%match%.pkg</string>
                 <key>expected_authority_names</key>
                 <array>
                     <string>Developer ID Installer: Florian Bauer (Y8U4RUM443)</string>
