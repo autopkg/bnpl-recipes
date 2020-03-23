@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of Intellij IDEA and imports into Munki.</string>
+    <string>Downloads the current release version of Intellij IDEA Community Edition and imports into Munki.</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.munki.intellijideace</string>
     <key>Input</key>
