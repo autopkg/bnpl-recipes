@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of Intellij IDEA Ultimate Edition and imports into Munki.</string>
+    <string>Downloads the current release version of IntelliJ IDEA Ultimate Edition and imports into Munki.</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.munki.intellijideaue</string>
     <key>Input</key>
@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>IntelliJ IDEA Ultimate Edition</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/intellij</string>
+        <string>apps/jetbrains</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -21,9 +21,9 @@
             <key>category</key>
             <string>Developer Tools</string>
             <key>description</key>
-            <string>Every aspect of IntelliJ IDEA is specifically designed to maximize developer productivity.
+            <string>Capable and ergonomic Java IDE
 
-Together, powerful static code analysis and ergonomic design make development not only productive but also an enjoyable experience.</string>
+https://www.jetbrains.com/idea</string>
             <key>developer</key>
             <string>JetBrains</string>
             <key>display_name</key>
@@ -45,6 +45,8 @@ Together, powerful static code analysis and ergonomic design make development no
     <key>Process</key>
     <array>
         <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
             <key>Arguments</key>
             <dict>
                 <key>munkiimport_appname</key>
@@ -54,8 +56,6 @@ Together, powerful static code analysis and ergonomic design make development no
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
         </dict>
     </array>
 </dict>
