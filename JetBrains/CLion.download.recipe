@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of CLion.</string>
+    <key>Identifier</key>
+    <string>com.github.bnpl.autopkg.download.clion</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>CLion</string>
+        <key>PROD_CODE</key>
+        <string>CL</string>
+        <key>APP_NAME</key>
+        <string>CLion</string>
+        <key>CSV_REQ</key>
+        <string>identifier "com.jetbrains.CLion" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2ZEFAR8TH3"</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.bnpl.autopkg.download.jetbrains</string>
+</dict>
+</plist>
