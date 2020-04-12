@@ -53,6 +53,17 @@
         </dict>
         <dict>
             <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/%APP_NAME%.app</string>
+                <key>requirement</key>
+                <string>%CSV_REQ%</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
             <string>EndOfCheckPhase</string>
         </dict>
     </array>

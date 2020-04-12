@@ -21,7 +21,9 @@
             <key>category</key>
             <string>Developer Tools</string>
             <key>description</key>
-            <string>PyCharm is designed by programmers, for programmers, to provide all the tools you need for productive Python development.</string>
+            <string>Python IDE for professional developers
+
+https://www.jetbrains.com/pycharm</string>
             <key>developer</key>
             <string>JetBrains</string>
             <key>display_name</key>
@@ -43,6 +45,8 @@
     <key>Process</key>
     <array>
         <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
             <key>Arguments</key>
             <dict>
                 <key>munkiimport_appname</key>
@@ -52,8 +56,6 @@
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
         </dict>
     </array>
 </dict>
