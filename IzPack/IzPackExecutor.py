@@ -32,7 +32,7 @@ class IzPackExecutor(Processor):
         subprocess.call(["expect", expect_path, self.env["app_installer"], self.env["app_root"]])
 
         zsh_path = real_path.replace(".pyc", "-get_version.zsh").replace(".py", "-get_version.zsh")
-        izpack_app_ver = subprocess.check_output(["zsh", zsh_path, self.env["app_root"]]).replace("\r\n", "").replace("\r", "").replace("\n", "")
+        izpack_app_ver = subprocess.check_output(["zsh", zsh_path, self.env["app_root"]]).decode('ascii').replace("\r\n", "").replace("\r", "").replace("\n", "")
         self.env["izpack_app_ver"] = izpack_app_ver
         print(izpack_app_ver)
 
