@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of TeX Live Utility, builds a package and imports it to Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.bnpl.autopkg.munki.texliveutility</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>TeXLiveUtility</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/tex</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>category</key>
+            <string>Productivity</string>
+            <key>description</key>
+            <string>TeX Live Utility is a Mac OS X graphical interface for TeX Live Manager, which is a tool provided with TeX Live 2008 and later, for updating, installing, and otherwise managing TeX Live. TeX Live Utility aims to provide a native Mac OS X interface for the most commonly used functions of the TeX Live Manager command-line tool.</string>
+            <key>developer</key>
+            <string>Adam R. Maxwell</string>
+            <key>display_name</key>
+            <string>TeX Live Utility</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>unattended_install</key>
+            <true/>
+            <key>unattended_uninstall</key>
+            <true/>
+            <key>uninstallable</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.4.3</string>
+    <key>ParentRecipe</key>
+    <string>com.github.bnpl.autopkg.pkg.texliveutility</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%RECIPE_CACHE_DIR%/TeX Live Utility-%version%.pkg</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+    </array>
+</dict>
+</plist>

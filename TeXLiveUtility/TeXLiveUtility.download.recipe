@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of TeX Live Utility.</string>
+    <key>Identifier</key>
+    <string>com.github.bnpl.autopkg.download.texliveutility</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>TeXLiveUtility</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>1.0.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>github_repo</key>
+                <string>amaxwell/tlutility</string>
+            </dict>
+            <key>Processor</key>
+            <string>GitHubReleasesInfoProvider</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/TeX Live Utility.app</string>
+                <key>requirement</key>
+                <string>identifier "com.googlecode.mactlmgr.tlu" and certificate leaf = H"9762c300630034b23fe0eeb054acc8bc889f1346"</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
