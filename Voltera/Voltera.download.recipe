@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of Voltera software.</string>
+    <key>Identifier</key>
+    <string>com.github.bnpl.autopkg.download.voltera</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Voltera</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>1.0.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>https://www.voltera.io/docs/desktop-application/</string>
+                <key>re_pattern</key>
+                <string>href="(.*)"&gt;macOS</string>
+                <key>request_headers</key>
+                <dict>
+                    <key>user-agent</key>
+                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloaderImproved</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%match%</string>
+                <key>request_headers</key>
+                <dict>
+                    <key>user-agent</key>
+                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
+                </dict>
+                <key>filename</key>
+                <string>Voltera.dmg</string>
+                <key>prefetch_filename</key>
+                <true/>
+<!--                <key>CHECK_FILESIZE_ONLY</key>
+                <true/>
+                <key>curl_opts</key>
+                <array>
+                    <string>-I</string>
+                </array>-->
+            </dict>
+        </dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>predicate</key>
+                <string>download_changed == FALSE</string>
+            </dict>
+            <key>Processor</key>
+            <string>StopProcessingIf</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        </array>
+</dict>
+</plist>
