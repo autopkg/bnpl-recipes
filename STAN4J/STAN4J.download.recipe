@@ -23,7 +23,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://stan4j.com/download/app/</string>
+                <string>https://stan4j.com/download/app/</string>
                 <key>re_pattern</key>
                 <string>href="(http://download.stan4j.com/app/stan-[^"]+mac[^"]+.x86_64.zip)"</string>
                 <key>request_headers</key>
