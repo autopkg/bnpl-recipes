@@ -20,6 +20,8 @@
             <dict>
                 <key>github_repo</key>
                 <string>raspberrypi/rpi-imager</string>
+                <key>asset_regex</key>
+                <string>.*\.dmg</string>
             </dict>
             <key>Processor</key>
             <string>GitHubReleasesInfoProvider</string>
