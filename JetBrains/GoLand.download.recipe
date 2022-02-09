@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of GoLand.</string>
+    <string>Downloads the current release version of GoLand. For Intel (x86_64) set ARCHITECTURE to 'mac'; for Apple silicon (arm64) use 'macM1'.</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.download.goland</string>
     <key>Input</key>

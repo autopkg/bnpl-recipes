@@ -3,11 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of JetBrains product.</string>
+    <string>Downloads the current release version of JetBrains product. For Intel (x86_64) set ARCHITECTURE to 'mac'; for Apple silicon (arm64) use 'macM1'.</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.download.jetbrains</string>
     <key>Input</key>
     <dict>
+        <key>ARCHITECTURE</key>
+        <string>mac</string>
         <key>NAME</key>
         <string>JetBrainsProductDownload</string>
         <key>PROD_CODE</key>
@@ -25,7 +27,7 @@
                 <key>url</key>
                 <string>https://data.services.jetbrains.com/products/releases?code=%PROD_CODE%&amp;latest=true&amp;type=release</string>
                 <key>re_pattern</key>
-                <string>"mac":{"link":"(https://download.jetbrains.com/.*?.dmg)"</string>
+                <string>"%ARCHITECTURE%":{"link":"(https://download.jetbrains.com/.*?.dmg)"</string>
                 <key>request_headers</key>
                 <dict>
                     <key>user-agent</key>
@@ -44,11 +46,27 @@
         </dict>
         <dict>
             <key>Processor</key>
-            <string>AppDmgVersioner</string>
+            <string>FileFinder</string>
             <key>Arguments</key>
             <dict>
-                <key>dmg_path</key>
-                <string>%pathname%</string>
+                <key>pattern</key>
+                <string>%pathname%/*.app</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>PlistReader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>info_path</key>
+                <string>%pathname%/%dmg_found_filename%</string>
+                <key>plist_keys</key>
+                <dict>
+                    <key>CFBundleShortVersionString</key>
+                    <string>version</string>
+                    <key>LSMinimumSystemVersion</key>
+                    <string>min_os_vers</string>
+                </dict>
             </dict>
         </dict>
         <dict>
@@ -57,9 +75,11 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%pathname%/%APP_NAME%.app</string>
+                <string>%pathname%/%dmg_found_filename%</string>
                 <key>requirement</key>
                 <string>%CSV_REQ%</string>
+                <key>strict_verification</key>
+                <true/>
             </dict>
         </dict>
         <dict>
