@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of AppCode. For Intel (x86_64) set ARCHITECTURE to 'mac'; for Apple silicon (arm64) use 'macM1'.</string>
+    <string>Downloads the current release version of AppCode.</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.download.appcode</string>
     <key>Input</key>
