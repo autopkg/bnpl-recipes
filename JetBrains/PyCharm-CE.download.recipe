@@ -15,7 +15,7 @@
         <key>APP_NAME</key>
         <string>PyCharm CE</string>
         <key>CSV_REQ</key>
-        <string>identifier "com.jetbrains.pycharm" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2ZEFAR8TH3"</string>
+        <string>identifier "com.jetbrains.pycharm.ce" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2ZEFAR8TH3"</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
