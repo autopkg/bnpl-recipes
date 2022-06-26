@@ -4,12 +4,16 @@
 <dict>
     <key>Description</key>
     <string>Downloads the current release version of PyCharm Professional Edition.</string>
+    <key>Comment</key>
+    <string>For the ARCH_TYPE variable use "mac" for Intel, use "macM1" for Apple Silicon</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.download.pycharmpe</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>PyCharm Professional Edition</string>
+        <key>ARCH_TYPE</key>
+        <string>mac</string>
         <key>PROD_CODE</key>
         <string>PCP</string>
         <key>CSV_REQ</key>

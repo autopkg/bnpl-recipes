@@ -4,6 +4,8 @@
 <dict>
     <key>Description</key>
     <string>Downloads the current release version of AppCode and imports into Munki.</string>
+    <key>Comment</key>
+    <string>For the SUPPORTED_ARCH variable use "x86_64" for Intel, use "arm64" for Apple Silicon</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.munki.appcode</string>
     <key>Input</key>
@@ -12,6 +14,8 @@
         <string>AppCode</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/jetbrains</string>
+        <key>SUPPORTED_ARCH</key>
+        <string>x86_64</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -30,6 +34,8 @@ https://www.jetbrains.com/objc</string>
             <string>AppCode</string>
             <key>name</key>
             <string>%NAME%</string>
+            <key>supported_architectures</key>
+            <string>%SUPPORTED_ARCH%</string>
             <key>unattended_install</key>
             <true/>
             <key>unattended_uninstall</key>
