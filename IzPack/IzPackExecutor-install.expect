@@ -5,153 +5,39 @@ set apppath [lindex $argv 1]
 
 spawn java -jar $jarpath -console
 
-expect -re "press 1.*"
+expect -re "ress 1.*"
 send "1\r"
 
-expect -re "press 1.*"
+expect -re "ress 1.*"
 send "1\r"
 
-expect -re "Select target path.*"
+expect -re "Select the installation path.*"
 send "$apppath\r"
 
-expect -re "enter O.*"
+expect -re "nter O.*"
 send "O\r"
 
-expect -re "press 1.*"
+expect -re "ress 1.*"
 send "1\r"
 
-expect -re "enter Y.*"
+expect -re "nter Y.*"
 send "Y\r"
 
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "enter Y.*"
-send "N\r"
-
-expect -re "press 1.*"
-send "1\r"
-
-expect -re "enter Y.*"
+expect -re "nter Y.*"
 send "N\r"
 
 set timeout 3
 
 while 1 {
     expect {
-        -re "input 1.*" {
-            send "1\r"
+        -re "nter Y.*" {
+            send "Y\r"
         }
-        -re "press 1.*" {
+        -re "ress 1.*" {
             send "1\r"
+
+            expect -re "nter Y.*"
+            send "N\r"
         }
         eof {
             break
