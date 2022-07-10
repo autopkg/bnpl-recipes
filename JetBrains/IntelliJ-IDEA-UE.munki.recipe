@@ -35,7 +35,9 @@ https://www.jetbrains.com/idea</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>supported_architectures</key>
-            <string>%SUPPORTED_ARCH%</string>
+            <array>
+                <string>%SUPPORTED_ARCH%</string>
+            </array>
             <key>unattended_install</key>
             <true/>
             <key>unattended_uninstall</key>
