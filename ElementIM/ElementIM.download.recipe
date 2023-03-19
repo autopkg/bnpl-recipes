@@ -21,9 +21,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://element.io/get-started</string>
+                <string>https://element.io/download</string>
                 <key>re_pattern</key>
-                <string>href="(http.*\.dmg)"</string>
+                <string>href="(https.*Element\.dmg)"</string>
                 <key>result_output_var_name</key>
                 <string>match</string>
                 <key>request_headers</key>
