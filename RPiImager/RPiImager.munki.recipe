@@ -48,7 +48,7 @@
                 <key>destination_path</key>
                 <string>%RECIPE_CACHE_DIR%/Applications/Raspberry Pi Imager.app</string>
                 <key>source_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/Raspberry.Pi.Imager.%version%.dmg/Raspberry Pi Imager.app</string>
+                <string>%RECIPE_CACHE_DIR%/downloads/Raspberry.Pi.Imager.%version%-UNIVERSAL-BUILD.dmg/Raspberry Pi Imager.app</string>
             </dict>
             <key>Processor</key>
             <string>Copier</string>
