@@ -12,6 +12,8 @@
         <string>pgAdmin4</string>
         <key>USER_AGENT</key>
         <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
+        <key>ARCH</key>
+        <string>x86_64</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
@@ -41,7 +43,7 @@
                 <key>url</key>
                 <string>%match%</string>
                 <key>re_pattern</key>
-                <string>href="(https://.*?\.dmg)"&gt;&lt;</string>
+                <string>href="(https://.*?%ARCH%\.dmg)"&gt;&lt;</string>
                 <key>request_headers</key>
                 <dict>
                     <key>user-agent</key>
@@ -70,7 +72,7 @@
                 <key>input_path</key>
                 <string>%pathname%/pgAdmin 4.app</string>
                 <key>requirement</key>
-                <string>identifier "org.pgadmin.pgadmin4" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "26QKX55P9K"</string>
+                <string>identifier "org.pgadmin.pgadmin4" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = TCHGL2R7C5</string>
             </dict>
             <key>Processor</key>
             <string>CodeSignatureVerifier</string>
