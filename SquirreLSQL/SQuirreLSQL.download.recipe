@@ -21,7 +21,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://squirrel-sql.sourceforge.net/#installation</string>
+                <string>https://squirrel-sql.sourceforge.net/#installation</string>
                 <key>re_pattern</key>
                 <string>href="(http://sourceforge.net/projects/squirrel-sql/.*-install.jar/download)"&gt;Install jar of SQuirreL .* for Mac.*</string>
                 <key>result_output_var_name</key>
