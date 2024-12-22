@@ -12,8 +12,6 @@
         <string>https://dl.pstmn.io/download/latest/osx</string>
         <key>NAME</key>
         <string>Postman</string>
-        <key>DOWNLOAD_URL</key>
-        <string>https://dl.pstmn.io/download/latest/osx</string>        
     </dict>
     <key>MinimumVersion</key>
     <string>1.0.0</string>
