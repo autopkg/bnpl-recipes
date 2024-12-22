@@ -3,7 +3,12 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of Postman.</string>
+    <string>Downloads the current release version of Postman.
+    
+The default DOWNLOAD_URL downloads the Intel version of Postman. To download 
+the Apple Silicon version of Postman, use this DOWNLOAD_URL:
+https://dl.pstmn.io/download/latest/osx_arm64
+</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.download.postman</string>
     <key>Input</key>
@@ -18,7 +23,7 @@
     <key>Process</key>
     <array>
         <dict>
-  			<key>Arguments</key>
+            <key>Arguments</key>
             <dict>
                 <key>filename</key>
                 <string>%NAME%.zip</string>
