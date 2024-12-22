@@ -3,7 +3,10 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of Postman, builds a package and imports it to Munki.</string>
+    <string>Downloads the current release version of Postman, builds a package and imports it to Munki.
+    
+If overriding the DOWNLOAD_URL for Apple Silicon architecture, be sure to supply a
+supported_architectures array containing the string "arm64".</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.munki.postman</string>
     <key>Input</key>
@@ -32,6 +35,10 @@
             <string>Postman</string>
             <key>name</key>
             <string>%NAME%</string>
+            <key>supported_architectures</key>
+            <array>
+                <string>x86_64</string>
+            </array>
             <key>unattended_install</key>
             <true/>
             <key>unattended_uninstall</key>
