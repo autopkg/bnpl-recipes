@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of RustRover.</string>
+    <key>Comment</key>
+    <string>For the ARCH_TYPE variable use "mac" for Intel, use "macM1" for Apple Silicon</string>
+    <key>Identifier</key>
+    <string>com.github.bnpl.autopkg.download.rustrover</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>RustRover</string>
+        <key>ARCH_TYPE</key>
+        <string>mac</string>
+        <key>PROD_CODE</key>
+        <string>RR</string>
+        <key>CSV_REQ</key>
+        <string>identifier "com.jetbrains.rustrover" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2ZEFAR8TH3"</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>ParentRecipe</key>
+    <string>com.github.bnpl.autopkg.download.jetbrains</string>
+</dict>
+</plist>
