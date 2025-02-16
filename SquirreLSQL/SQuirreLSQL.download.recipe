@@ -23,13 +23,13 @@
                 <key>url</key>
                 <string>https://squirrel-sql.sourceforge.net/#installation</string>
                 <key>re_pattern</key>
-                <string>href=\"(https://sourceforge\.net/projects/squirrel-sql/files/1-stable/(\d(\.\d)+)/squirrel-sql-(\d(\.\d)+)-MACOSX-install\.jar/download)\"</string>
+                <string>href="(http://sourceforge.net/projects/squirrel-sql/.*-install.jar/download)"&gt;Install jar of SQuirreL .* for Mac.*</string>
                 <key>result_output_var_name</key>
                 <string>prematch</string>
                 <key>request_headers</key>
                 <dict>
                     <key>user-agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15</string>
+                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
                 </dict>
             </dict>
         </dict>
@@ -47,7 +47,7 @@
                 <key>request_headers</key>
                 <dict>
                     <key>user-agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15</string>
+                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
                 </dict>
             </dict>
         </dict>
@@ -65,7 +65,7 @@
                 <key>request_headers</key>
                 <dict>
                     <key>user-agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15</string>
+                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
                 </dict>
             </dict>
         </dict>
