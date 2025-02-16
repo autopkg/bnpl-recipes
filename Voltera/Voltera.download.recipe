@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of Voltera software.</string>
+    <string>Downloads the current release version of Voltera V-One software.</string>
     <key>Identifier</key>
     <string>com.github.bnpl.autopkg.download.voltera</string>
     <key>Input</key>
@@ -17,57 +17,41 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>URLTextSearcher</string>
+            <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
-                <key>url</key>
-                <string>https://www.voltera.io/docs/desktop-application/</string>
-                <key>re_pattern</key>
-                <string>href="(.*)"&gt;macOS</string>
-                <key>request_headers</key>
-                <dict>
-                    <key>user-agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
-                </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloaderImproved</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%match%</string>
-                <key>request_headers</key>
-                <dict>
-                    <key>user-agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
-                </dict>
                 <key>filename</key>
-                <string>Voltera.dmg</string>
-                <key>prefetch_filename</key>
-                <true/>
-<!--                <key>CHECK_FILESIZE_ONLY</key>
-                <true/>
-                <key>curl_opts</key>
-                <array>
-                    <string>-I</string>
-                </array>-->
+                <string>%NAME%.dmg</string>
+                <key>url</key>
+                <string>https://voltera-styx.herokuapp.com/download/osx</string>
             </dict>
-        </dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>predicate</key>
-                <string>download_changed == FALSE</string>
-            </dict>
-            <key>Processor</key>
-            <string>StopProcessingIf</string>
         </dict>
         <dict>
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
         </dict>
-        </array>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/Voltera.app</string>
+                <key>requirement</key>
+                <string>identifier "io.Voltera.voltera-styx" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "7Y22ECF4T2"</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>Versioner</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>%pathname%/Voltera.app/Contents/Info.plist</string>
+                <key>plist_version_key</key>
+                <string>CFBundleShortVersionString</string>
+            </dict>
+        </dict>
+    </array>
 </dict>
 </plist>
