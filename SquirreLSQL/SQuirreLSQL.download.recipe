@@ -17,56 +17,13 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>URLTextSearcher</string>
+            <string>com.github.jessepeterson.munki.GrandPerspective/SourceForgeURLProvider</string>
             <key>Arguments</key>
             <dict>
-                <key>url</key>
-                <string>https://squirrel-sql.sourceforge.net/#installation</string>
-                <key>re_pattern</key>
-                <string>href="(http://sourceforge.net/projects/squirrel-sql/.*-install.jar/download)"&gt;Install jar of SQuirreL .* for Mac.*</string>
-                <key>result_output_var_name</key>
-                <string>prematch</string>
-                <key>request_headers</key>
-                <dict>
-                    <key>user-agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
-                </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%prematch%</string>
-                <key>re_pattern</key>
-                <string>http-equiv="refresh" content=".*; url=(.*)"</string>
-                <key>result_output_var_name</key>
-                <string>match</string>
-                <key>request_headers</key>
-                <dict>
-                    <key>user-agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
-                </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%prematch%</string>
-                <key>re_pattern</key>
-                <string>http-equiv="refresh" content=".*; url=.*/(.*\.jar).*"</string>
-                <key>result_output_var_name</key>
-                <string>namematch</string>
-                <key>request_headers</key>
-                <dict>
-                    <key>user-agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0</string>
-                </dict>
+                <key>SOURCEFORGE_PROJECT_ID</key>
+                <string>28383</string>
+                <key>SOURCEFORGE_FILE_PATTERN</key>
+                <string>\.jar</string>
             </dict>
         </dict>
         <dict>
@@ -74,12 +31,8 @@
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
-                <key>url</key>
-                <string>%match%</string>
                 <key>filename</key>
-                <string>%namematch%</string>
-                <key>CHECK_FILESIZE_ONLY</key>
-                <true/>
+                <string>%NAME%.jar</string>
             </dict>
         </dict>
         <dict>
