@@ -18,13 +18,18 @@
         <dict>
             <key>Arguments</key>
             <dict>
-                <key>github_repo</key>
-                <string>amaxwell/tlutility</string>
+                <key>appcast_url</key>
+                <string>https://raw.githubusercontent.com/amaxwell/tlutility/master/appcast/tlu_appcast.xml</string>
             </dict>
             <key>Processor</key>
-            <string>GitHubReleasesInfoProvider</string>
+            <string>SparkleUpdateInfoProvider</string>
         </dict>
         <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>filename</key>
+                <string>%NAME%-%version%.zip</string>
+            </dict>
             <key>Processor</key>
             <string>URLDownloader</string>
         </dict>
@@ -33,15 +38,28 @@
             <string>EndOfCheckPhase</string>
         </dict>
         <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>archive_path</key>
+                <string>%pathname%</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <key>purge_destination</key>
+                <true/>
+            </dict>
             <key>Processor</key>
-            <string>CodeSignatureVerifier</string>
+            <string>Unarchiver</string>
+        </dict>
+        <dict>
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%pathname%/TeX Live Utility.app</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/TeX Live Utility.app</string>
                 <key>requirement</key>
-                <string>identifier "com.googlecode.mactlmgr.tlu" and certificate leaf = H"9762c300630034b23fe0eeb054acc8bc889f1346"</string>
+                <string>identifier "com.googlecode.mactlmgr.tlu" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "966Z24PX4J"</string>
             </dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
         </dict>
     </array>
 </dict>
