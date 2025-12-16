@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the current release version of PyCharm and imports into Munki.</string>
+    <key>Comment</key>
+    <string>For the SUPPORTED_ARCH variable use "x86_64" for Intel, use "arm64" for Apple Silicon</string>
+    <key>Identifier</key>
+    <string>com.github.bnpl.autopkg.munki.pycharm</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>PyCharm</string>
+        <key>MUNKI_REPO_SUBDIR</key>
+        <string>apps/jetbrains</string>
+        <key>SUPPORTED_ARCH</key>
+        <string>x86_64</string>
+        <key>pkginfo</key>
+        <dict>
+            <key>catalogs</key>
+            <array>
+                <string>testing</string>
+            </array>
+            <key>category</key>
+            <string>Developer Tools</string>
+            <key>description</key>
+            <string>Python IDE for professional developers
+
+https://www.jetbrains.com/pycharm</string>
+            <key>developer</key>
+            <string>JetBrains</string>
+            <key>display_name</key>
+            <string>PyCharm</string>
+            <key>name</key>
+            <string>%NAME%</string>
+            <key>supported_architectures</key>
+            <array>
+                <string>%SUPPORTED_ARCH%</string>
+            </array>
+            <key>unattended_install</key>
+            <true/>
+            <key>unattended_uninstall</key>
+            <true/>
+            <key>uninstallable</key>
+            <true/>
+        </dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.4.3</string>
+    <key>ParentRecipe</key>
+    <string>com.github.bnpl.autopkg.download.pycharm</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>munkiimport_appname</key>
+                <string>PyCharm.app</string>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
