@@ -13,7 +13,7 @@
         <key>NAME</key>
         <string>PyCharm</string>
         <key>ARCH_TYPE</key>
-        <string>mac</string>
+        <string>macM1</string>
         <key>PROD_CODE</key>
         <string>PCP</string>
         <key>CSV_REQ</key>
