@@ -59,7 +59,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%RECIPE_CACHE_DIR%/%NAME%/%match%.pkg</string>
+                <string>%RECIPE_CACHE_DIR%/%NAME%/%NAME%_%version%.pkg</string>
                 <key>expected_authority_names</key>
                 <array>
                     <string>Developer ID Installer: Florian Bauer (Y8U4RUM443)</string>
