@@ -23,5 +23,17 @@
     <string>0.2.0</string>
     <key>ParentRecipe</key>
     <string>com.github.bnpl.autopkg.download.jetbrains</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>DeprecationWarning</string>
+            <key>Arguments</key>
+            <dict>
+                <key>warning_message</key>
+                <string>Intelli-J IDEA is now unified into a single application. Switch to: com.github.bnpl.autopkg.download.intellijidea</string>
+            </dict>
+        </dict>
+    </array>
 </dict>
 </plist>

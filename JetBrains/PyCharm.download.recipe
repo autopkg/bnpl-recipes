@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of PyCharm Professional Edition.</string>
+    <string>Downloads the current release version of PyCharm.</string>
     <key>Comment</key>
     <string>For the ARCH_TYPE variable use "mac" for Intel, use "macM1" for Apple Silicon</string>
     <key>Identifier</key>
-    <string>com.github.bnpl.autopkg.download.pycharmpe</string>
+    <string>com.github.bnpl.autopkg.download.pycharm</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>PyCharm Professional Edition</string>
+        <string>PyCharm</string>
         <key>ARCH_TYPE</key>
-        <string>mac</string>
+        <string>macM1</string>
         <key>PROD_CODE</key>
         <string>PCP</string>
         <key>CSV_REQ</key>
@@ -23,17 +23,5 @@
     <string>0.2.0</string>
     <key>ParentRecipe</key>
     <string>com.github.bnpl.autopkg.download.jetbrains</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>DeprecationWarning</string>
-            <key>Arguments</key>
-            <dict>
-                <key>warning_message</key>
-                <string>PyCharm is now unified into a single application. Switch to: com.github.bnpl.autopkg.download.pycharm</string>
-            </dict>
-        </dict>
-    </array>
 </dict>
 </plist>
